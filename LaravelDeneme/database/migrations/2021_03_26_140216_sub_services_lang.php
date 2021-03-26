@@ -16,7 +16,7 @@ class SubServicesLang extends Migration
         Schema::create('sub_services_lang', function (Blueprint $table) {
             $table->increments('id');
             $table->string('sub_service_name',255);
-            $table->smallInteger('default_sub_service_id')->unsigned();
+            $table->integer('default_sub_service_id')->unsigned();
             $table->foreign('default_sub_service_id')->references('id')->on('sub_services');
             $table->string('lang',255);
             $table->string('slug',255);

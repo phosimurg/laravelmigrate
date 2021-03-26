@@ -18,7 +18,7 @@ class BlogArticlesLang extends Migration
             $table->string('blog_article_name',255);
             $table->integer('sub_service_id');//bu foreign olacak
             $table->integer('blog_category_id'); //bu foreign olacak
-            $table->smallInteger('default_blog_article_id')->unsigned();
+            $table->integer('default_blog_article_id')->unsigned();
             $table->foreign('default_blog_article_id')->references('id')->on('blog_articles');
             $table->string('lang',255);
             $table->string('slug',255);

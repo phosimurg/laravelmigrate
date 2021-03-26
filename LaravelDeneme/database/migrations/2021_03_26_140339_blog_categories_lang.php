@@ -16,7 +16,7 @@ class BlogCategoriesLang extends Migration
         Schema::create('blog_categories_lang', function (Blueprint $table) {
             $table->increments('id');
             $table->string('blog_category_name',255);
-            $table->smallInteger('default_blog_category_id')->unsigned();
+            $table->integer('default_blog_category_id')->unsigned();
             $table->foreign('default_blog_category_id')->references('id')->on('blog_categories');
             $table->string('lang',255);
             $table->string('slug',255);

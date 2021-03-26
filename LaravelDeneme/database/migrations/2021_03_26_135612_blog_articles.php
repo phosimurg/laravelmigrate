@@ -16,9 +16,9 @@ class BlogArticles extends Migration
         Schema::create('blog_articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('blog_article_name',255);
-            $table->integer('sub_service_id');
+            $table->integer('sub_service_id')->unsigned();
             $table->foreign('sub_service_id')->references('id')->on('sub_services');
-            $table->integer('blog_category_id');
+            $table->integer('blog_category_id')->unsigned();
             $table->foreign('blog_category_id')->references('id')->on('blog_categories');
             $table->string('slug',255);
             $table->timestamps();
